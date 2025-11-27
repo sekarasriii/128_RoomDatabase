@@ -3,6 +3,7 @@ package com.example.meet7_roomdatabase.viewmodel
 import com.example.meet7_roomdatabase.room.Siswa
 import com.example.meet7_roomdatabase.repositori.RepositoriSiswa
 import androidx.lifecycle.ViewModel
+import androidx.compose.runtime.mutableStateOf
 
 class EntryViewModel(private val repositoriSiswa: RepositoriSiswa): ViewModel() {
     var uiStateSiswa by mutableStateOf(UIStateSiswa())
