@@ -8,4 +8,14 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import  com.example.meet7_roomdatabase.repositori.AplikasiSiswa
 import androidx.lifecycle.ViewModelProvider
 
-object PenyediaViewModel {}
+object PenyediaViewModel {
+    val Factory = viewModelFactory {
+        initializer {
+            HomeViewModel(aplikasiSiswa().container.repositoriSiswa)
+        }
+        initializer {
+            EntryViewModel(aplikasiSiswa().container.repositoriSiswa)
+        }
+    }
+}
+
