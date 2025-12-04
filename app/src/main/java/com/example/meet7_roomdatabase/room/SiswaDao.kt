@@ -5,6 +5,7 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
+import androidx.room.Update
 
 @Dao
 interface SiswaDao {
@@ -16,8 +17,11 @@ interface SiswaDao {
 
     //edit : tambah 3 fungsi
     @Query("SELECT * from tblSiswa WHERE id = :id")
-    fun getSiswa(id: Int): Flow<Siswa>
+    fun getSiswa(id: Int): Flow<Siswa?>
 
     @Delete
     suspend fun delete(siswa: Siswa)
+
+    @Update
+    suspend fun update(siswa: Siswa)
 }

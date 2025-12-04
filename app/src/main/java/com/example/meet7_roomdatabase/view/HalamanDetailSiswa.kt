@@ -18,7 +18,6 @@ import com.example.meet7_roomdatabase.R
 import androidx.compose.material3.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
-import android.R.attr.shape
 import androidx.compose.runtime.rememberCoroutineScope
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.rememberScrollState
@@ -41,11 +40,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.TextButton
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailSiswaScreen(
-    //navigateToEditItem: (Int) -> Unit,
+    navigateToEditItem: (Int) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: DetailViewModel = viewModel(factory = PenyediaViewModel.Factory)
@@ -61,7 +62,9 @@ fun DetailSiswaScreen(
         floatingActionButton = {
             val uiState = viewModel.uiDetailState.collectAsState()
             FloatingActionButton(
-                onClick = //{ navigateToEditItem(uiState.value.detailSiswa.id) },
+                onClick = {
+                    navigateToEditItem(uiState.value.detailSiswa.id)
+                    },
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
 

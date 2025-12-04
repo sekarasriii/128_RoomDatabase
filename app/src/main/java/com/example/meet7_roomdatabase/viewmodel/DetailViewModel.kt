@@ -7,6 +7,10 @@ import com.example.meet7_roomdatabase.view.route.DestinasiDetailSiswa
 import kotlinx.coroutines.flow.StateFlow
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+
 
 class DetailViewModel (
     savedStateHandle: SavedStateHandle,
