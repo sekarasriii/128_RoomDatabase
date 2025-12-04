@@ -32,7 +32,10 @@ import com.example.meet7_roomdatabase.viewmodel.toSiswa
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
-
+import com.example.meet7_roomdatabase.room.Siswa
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -113,5 +116,26 @@ private fun BodyDetailDataSiswa(
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_medium))
             )
         }
+    }
+}
+@Composable
+fun DetailDataSiswa(
+    siswa: Siswa, modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier, colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(dimensionResource(id = R.dimen.padding_medium)),
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+        ) {
+
+        }
+
     }
 }
