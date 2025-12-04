@@ -35,7 +35,10 @@ import androidx.compose.material3.Text
 import com.example.meet7_roomdatabase.room.Siswa
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import
+import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.ui.text.font.FontWeight
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -166,5 +169,15 @@ fun DetailDataSiswa(
             )
         }
 
+    }
+}
+@Composable
+private fun BarisDetailData(
+    @StringRes labelResID: Int, itemDetail: String, modifier: Modifier = Modifier
+) {
+    Row(modifier = modifier) {
+        Text(stringResource(labelResID))
+        Spacer(modifier = Modifier.weight(1f))
+        Text(text = itemDetail, fontWeight = FontWeight.Bold)
     }
 }
